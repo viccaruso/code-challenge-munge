@@ -266,7 +266,5 @@ Output:
 
 
 export function makeKeysString(arr) {
-    return arr.reduce((acc, current) => {
-        acc += current.keys;
-    }, '');
+    return Object.keys(arr[0]).reduce((acc, current) => acc += current, '');
 }

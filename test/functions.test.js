@@ -198,7 +198,7 @@ test('should return an count object', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-skip('should return an models string', (expect) => {
+test('should return a string of all keys', (expect) => {
 
 
     const actual = makeKeysString(vehicles);
