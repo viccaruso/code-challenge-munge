@@ -250,7 +250,9 @@ Output:
 
 export function makeCountObject(arr) {
     return arr.reduce((acc, current) => {
-        (!acc[current.type]) ? acc[current.type] = 0 : true;
+        if(!acc[current.type]) {
+            acc[current.type] = 0;
+        }
         acc[current.type]++;
         return acc;
     }, {});
