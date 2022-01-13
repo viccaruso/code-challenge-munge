@@ -225,7 +225,7 @@ Output:
  */
 
 export function makeModelsStringWithReduce(arr) {
-    return '';
+    return arr.reduce((acc, current) => acc + current.model, '');
 }
 
 /*
@@ -235,7 +235,7 @@ Output: 14
  */
 
 export function getSumOfAges(arr) {
-    return 0;
+    return arr.reduce((acc, current) => acc + current.age, 0);
 }
 
 /*
@@ -249,7 +249,11 @@ Output:
  */
 
 export function makeCountObject(arr) {
-    return {};
+    return arr.reduce((acc, current) => {
+        (!acc[current.type]) ? acc[current.type] = 0 : true;
+        acc[current.type]++;
+        return acc;
+    }, {});
 }
 
 
@@ -262,5 +266,7 @@ Output:
 
 
 export function makeKeysString(arr) {
-    return '';
+    return arr.reduce((acc, current) => {
+        acc += current.keys;
+    }, '');
 }
